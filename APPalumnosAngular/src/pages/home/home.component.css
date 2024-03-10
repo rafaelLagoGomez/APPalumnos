@@ -1,0 +1,29 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: url("../../assets/fondohome.jpg");
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.texthome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 400px;
+
+}
+
+.texto-bio {
+    background-color: var(--primarycolor);
+    opacity: 1.5;
+    color: rgb(226, 17, 209);
+    font-family: var(--primaryfont);
+    font-size: 30px;
+    font-weight: 800;
+    /* padding-left: 50px; */
+}

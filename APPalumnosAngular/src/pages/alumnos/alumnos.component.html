@@ -1,0 +1,48 @@
+
+<div class="row" style="gap: 15px">
+    <div class="card text-bg-warning bg-opacity-75 mb-3" style="max-width: 23rem; padding-bottom: 10px; gap: 15px">
+        <h4 class="card-header">GESTION DE ALUMNOS</h4>
+        <div class="edit-body">
+            <div class="inputs">
+                <div class="col-md-15">
+                    <input type="text" class="form-control" id="" placeholder="Id Alumno" required #inputId>
+                </div>
+                <div class="col-md-15">
+                    <input type="text" class="form-control" id="" placeholder="Nombre" required #inputNombre>
+                </div>
+                <div class="col-md-15">
+                    <input type="text" class="form-control" id="" placeholder="Apellido" required #inputApellido>
+                </div>
+                <div class="col-md-15">
+                    <input type="text" class="form-control" id="" placeholder="Grupo" required #inputGrupo>
+                </div>
+                <div class="col-md-15">
+                    <input type="text" class="form-control" id="" placeholder="Año Matriculación" required #inputYearMatricula>
+                </div>
+            </div>
+            <br>
+            <div class="col-16" style="padding-bottom: 10px; gap: 30px">
+                <button class="btn btn-outline-dark" type="submit" (click)="findStudent(inputId)">Mostrar</button>
+                <button class="btn btn-outline-dark" type="submit" (click)="addNewStudent(inputId, inputNombre, inputApellido, inputGrupo, inputYearMatricula)">Crear</button>
+                <button class="btn btn-outline-dark" type="submit" (click)="updateStudent(inputId, inputNombre, inputApellido, inputGrupo, inputYearMatricula)">Actualizar</button>
+                <button class="btn btn-outline-dark" type="submit" (click)="studentToDelete(inputId)">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CARD -->
+    <div class="resultado">
+            @for(student of students; track student.student_id){
+                <app-card-students [students]="student"></app-card-students>
+            } @empty {
+                <div class="btn-outline-light" style="margin-top: 5px;" role="alert">
+                    <!-- ¡No hay alumnos! -->
+                </div>
+            } 
+            <div class="alert alert-dismissible" role="alert">
+                {{textWarning}}
+            </div>
+    </div>
+
+</div>

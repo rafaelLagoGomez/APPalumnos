@@ -1,0 +1,14 @@
+
+<div class="card text-bg-warning bg-opacity-75 mb-3" style="max-width: 15rem;">
+    <div class="card-body">
+        @if(first_name && last_name) {
+            <h6 class="card-text">Nombre: {{first_name}} {{last_name}}</h6>
+        }
+        @if(subject) {
+            <h6 class="card-text">Asignatura: {{subject}}</h6>
+        }
+        @if(avg) {
+            <h6 class="card-text">Nota media del alumno: {{avg}}</h6>
+        }
+    </div>
+</div>

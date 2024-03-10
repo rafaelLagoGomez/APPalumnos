@@ -1,0 +1,35 @@
+
+<div class="row" style="gap: 15px">
+    <div class="card text-bg-dark bg-opacity-75 mb-3" style="max-width: 30rem; padding-bottom: 10px; gap: 15px">
+        <h4 class="card-header">CONTROL DE NOTAS Y ASIGNATURAS</h4>
+        <div class="edit-body">
+            <div class="inputs">
+                <div class="col-md-15">
+                    <input type="text" class="form-control" id="" placeholder="Id Alumno" required #inputId>
+                </div>
+                <button class="btn btn-outline-info" type="submit" (click)="notaMediaAlumnoId(inputId)">Nota Media del Alumno</button>
+                <button class="btn btn-outline-info" style="margin-bottom: 20px;" type="submit" (click)="todasAsignaturasOrByStudentId(inputId)">Asignaturas Matriculadas</button>
+                <div class="col-md-15">
+                    <input type="text" class="form-control" id="" placeholder="Id Profesor" required #inputIdTeacher>
+                </div>
+                <button class="btn btn-outline-warning" style="margin-bottom: 20px;" type="submit" (click)="todasAsignaturasOrByTeacherId(inputIdTeacher)">Asignaturas Impartidas</button>
+            </div>           
+        </div>
+    </div>
+
+
+    <!-- CARD alumnos-bucle -->
+    <div class="resultado">
+        @for(item of selected; track item.id){
+        <app-card-ssubj [first_name]="item.first_name" [last_name]="item.last_name" [subject]="item.title" [avg]="item.nota_media"></app-card-ssubj>
+        } @empty {
+        <!-- <div class="btn-outline-light" style="margin-top: 5px;" role="alert">
+            ¡No hay alumnos!
+        </div> -->
+        }
+        <div class="alert alert-dismissible" role="alert">
+            {{textWarning}}
+        </div>
+    </div>
+
+</div>
